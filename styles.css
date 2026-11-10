@@ -1,0 +1,199 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    font-family: "Inter", system-ui;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #1a1a1a;
+    position: relative;
+}
+
+.glow {
+    position: fixed;
+    width: 650px;
+    height: 650px;
+    border-radius: 50%;
+    filter: blur(90px);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.glow-yellow {
+    left: -280px;
+    top: 15%;
+    background: radial-gradient(circle, rgba(255, 210, 0, 0.5), transparent 70%);
+}
+
+.glow-green {
+    right: -220px;
+    top: -200px;
+    background: radial-gradient(circle, rgba(0, 220, 120, 0.4), transparent 70%);
+}
+
+.glow-pink {
+    left: 50%;
+    bottom: -300px;
+    transform: translateX(-50%);
+    background: radial-gradient(circle, rgba(255, 70, 160, 0.4), transparent 70%);
+}
+
+.screen {
+    position: fixed;
+    inset: 0;
+    z-index: 2;
+    backdrop-filter: blur(30px);
+    pointer-events: none;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    z-index: 3;
+    position: fixed;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+big {
+    display: block;
+    width: 100%;
+    font-size: 30px;
+    color: white;
+    font-weight: 500;
+    text-align: center;
+    margin-top: 10vh;
+    font-family: "Google Sans";
+}
+
+.card {
+    width: 80%;
+    max-width: 400px; /* Prevents card from stretching on desktop */
+    padding: 20px;
+    background-color: transparent;
+    border-radius: 20px;
+    margin-top: 10vh;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+/* Mic container wrapper */
+.mic-container {
+    position: relative;
+    width: 20vw;
+    height: 20vw;
+    min-width: 120px; /* Enforces a minimum size for very small phones */
+    min-height: 120px;
+    max-width: 200px; /* Enforces a maximum size for desktop */
+    max-height: 200px;
+}
+
+.mic {
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.7);
+    background-image: url(assets/mic.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 50% 50%;
+    cursor: pointer;
+    z-index: 4;
+}
+
+.scarp {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    pointer-events: none;
+    transform-origin: center;
+    transform: scale(1.0);
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 100%;
+    transition: transform 0.1s linear;
+}
+
+.flex {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10vh; /* Scaled down slightly for desktop */
+}
+
+.btn {
+    width: 40px;
+    height: 20px;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 15px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.in_circle {
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 10px;
+    transition: 0.5s;
+    position: relative;
+    left: 0px;
+}
+
+p {
+    margin-left: 20px;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 14px;
+    transition: 0.5s;
+}
+
+button {
+    border: 0;
+    background: rgba(255, 255, 255, 0.65);
+    color: rgba(0, 0, 0, 0.7);
+    padding: 15px 40px;
+    border-radius: 5px;
+    margin-top: 5vh;
+    font-family: "Google Sans";
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.2s;
+}
+
+button:hover {
+    background: rgba(255, 255, 255, 0.85);
+}
+
+@media (min-width: 768px) {
+    big {
+        font-size: 35px; /* Larger title on desktop */
+        margin-top: 10vh;
+    }
+    
+    .card {
+        margin-top: 8vh;
+    }
+    
+    .flex {
+        margin-top: 8vh;
+    }
+
+    /* Spread the glows out more on a wider screen */
+    .glow-yellow { left: -100px; top: 10%; }
+    .glow-green { right: -100px; top: -100px; }
+    .glow-pink { bottom: -200px; }
+
+    .mic-container{
+    	width: 5vw;
+    	height: 5vw;
+    }
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Persona</title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css" integrity="sha512-Zcn6bjR/8RZbLEpLIeOwNtzREBAJnUKESxces60Mpoj+2okopSAcSUIUOseddDm0cxnGQzxIR7vJgsLZbdLE3w==" crossorigin="anonymous" referrerpolicy="no-referrer">
+	<link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+</head>
+<body>
+	<div class="screen"></div>
+	<div class="glow glow-yellow"></div>
+	<div class="glow glow-green"></div>
+	<div class="glow glow-pink"></div>
+	<input type="date" style="opacity: 0; pointer-events: none;" id="period">
+	<div class="screen"></div>
+	<div class="container">
+		<big>Tell me<br>Something<span></span></big>
+		<div class="card">
+			<div class="mic-container">
+				<div class="mic" onclick="handleMic()"></div>
+				<div class="scarp"></div>
+			</div>
+			<div class="flex" style="margin-top: 20vh">
+				<div class="btn"><div class="in_circle"></div></div>
+				<p>Summary</p>
+			</div>
+			<button onclick="$('#period').showPicker()">Period: Today</button>
+		</div>
+	</div>
+</body>
+<script src="script.js"></script>
+</html>
